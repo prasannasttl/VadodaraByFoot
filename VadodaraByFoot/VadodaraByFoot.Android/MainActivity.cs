@@ -56,37 +56,37 @@ namespace VadodaraByFoot.Droid
             AppStatics.DeviceHeight = heightInDp;
 
 
-            var density = Resources.DisplayMetrics.Density;
+			int density = (int)Resources.DisplayMetrics.Density;
 
 			switch (density)
 			{
-                case (float)0.75:
+				case (int)0.75:
                     AppStatics.AndroidScreenResolutionType = "ldpi"; //120dpi
 					break;
-                case (float)1.0:
+				case (int)1.0:
 					AppStatics.AndroidScreenResolutionType = "mdpi"; //160dpi
 					break;
-                case (float)1.5:
+				/*case (int)1.5:
 					AppStatics.AndroidScreenResolutionType = "hdpi";//240dpi
-					break;
-                case (float)2.0:
+					break;*/
+				case (int)2.0:
 					AppStatics.AndroidScreenResolutionType = "xhdpi";//320 dpi
 					break;
-				case (float)2.5:
+			/*	case (int)2.5:
 					AppStatics.AndroidScreenResolutionType = "xhdpi";//320 dpi
-					break;
-                case (float)3.0:
+					break;/*
+                case (int)3.0:
                     AppStatics.AndroidScreenResolutionType = "xxhdpi";//480dpi
                     break;
-				case (float)3.5:
+			/*	case (int)3.5:
 					AppStatics.AndroidScreenResolutionType = "xxhdpi";//560dpi
-					break;
-                case (float)4.0:
+					break;*/
+				case (int)4.0:
                     AppStatics.AndroidScreenResolutionType = "xxxhdpi";//640dpi
                     break;
-				case (float)4.5:
+			/*	case (int)4.5:
 					AppStatics.AndroidScreenResolutionType = "xxxhdpi";//640dpi
-					break;
+					break;*/
              }
         }
         public void getActionbarHeight()
