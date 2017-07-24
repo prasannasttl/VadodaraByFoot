@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="PlaceHolderEmail" xml:space="preserve">
+ 	   <value>EMAIL</value>
+  	   <comment>placeholder for email entry in login and registration page</comment>
+	</data>
+	<data name="PlacheholderPassword" xml:space="preserve">
+ 	   <value>PASSWORD</value>
+  	   <comment>placeholder for password entry in login and registration page</comment>
+	</data>
+	<data name="lblForgotPass" xml:space="preserve">
+ 	   <value>Forgot your password?</value>
+  	   <comment>label for placeholder password in login page</comment>
+	</data>
+	<data name="btnLogin" xml:space="preserve">
+ 	   <value>Login</value>
+  	   <comment>login button text in login page</comment>
+	</data>
+	<data name="lblDnthaveaccount" xml:space="preserve">
+       <value>Don't have an account?</value>
+       <comment>dont have an acocunt label in login  page</comment>
+    </data>
+	<data name="lblRegistration" xml:space="preserve">
+       <value>Registration</value>
+       <comment>registration label button in login page</comment>
+    </data>
+
+	<data name="PlacheholderMobNo" xml:space="preserve">
+       <value>MOBILE NO.</value>
+       <comment>placeholder for mobile number entry in registration page</comment>
+    </data>
+	
+	<data name="PlacheholderName" xml:space="preserve">
+       <value>USER NAME</value>
+       <comment>placeholder for user name entry in registration page</comment>
+    </data>
+
+	<data name="PlacheholderLastName" xml:space="preserve">
+       <value>LAST NAME</value>
+       <comment>placeholder for last name entry in registration page</comment>
+    </data>
+
+	<data name="PlacheholderFirstName" xml:space="preserve">
+       <value>FIRST NAME</value>
+       <comment>placeholder for first name entry in registration page</comment>
+    </data>
+	
+	<data name="PlacheholderConfirmPass" xml:space="preserve">
+       <value>CONFIRM PASSWORD</value>
+       <comment>placeholder for confirm password entry in registration page</comment>
+    </data>
+
+	<data name="lblAlreadyhaveaccount" xml:space="preserve">
+       <value>Already have an account?</value>
+       <comment>dont have an acocunt label in registration page</comment>
+    </data>
+    <data name="lblAgreeTermCondition" xml:space="preserve">
+       <value>I agree with the Terms and Conditions</value>
+    </data>
+	<data name="lblAgreeTermConditionLink" xml:space="preserve">
+       <value>Terms and Conditions</value>
+    </data>
+	<data name="btnRegister" xml:space="preserve">
+       <value>Register</value>
+       <comment>register button text in registration page</comment>
+    </data>
+
+    <data name="Placheholder_UsernameEmail" xml:space="preserve">
+       <value>USERNAME OR EMAIL</value>
+       <comment>placeholder for entry in forgot password page</comment>
+    </data>
+	<data name="PlacheholderFullName" xml:space="preserve">
+       <value>FULL NAME</value>
+       <comment>placeholder for entry in feedback and contact us page</comment>
+    </data>
+	
+    <data name="PlaceHolderEmailAddress" xml:space="preserve">
+       <value>EMAIL ADRESS</value>
+       <comment>placeholder for entry in feedback and contact us page</comment>
+    </data>
+	
+	 <data name="PlacheholderSubject" xml:space="preserve">
+       <value>SUBJECT</value>
+       <comment>placeholder for entry in feedback and contact us page</comment>
+    </data>
+	
+	 <data name="PlacheholderMessage" xml:space="preserve">
+       <value>MESSAGE</value>
+       <comment>placeholder for entry in feedback and contact us page</comment>
+    </data>
+	<data name="LbtnSubmit" xml:space="preserve">
+       <value>Submit</value>
+       <comment>Submit button text in feedback and contact us page</comment>
+    </data>
+	 <data name="LbtnCancel" xml:space="preserve">
+       <value>Cancel</value>
+   </data>
+	<data name="LForgotPassDetailText" xml:space="preserve">
+       <value>Enter your username or email address to request a password reset.</value>
+   </data>
+	
+	<data name="LLogoutSucessful" xml:space="preserve">
+       <value>Logged out sucessfully.</value>
+       <comment>Logged out sucessfully.</comment>
+    </data>
+     <data name="LLogoutUnSucessful" xml:space="preserve">
+       <value>Logged out unsucessful.</value>
+       <comment>Logged out sucessfully.</comment>
+    </data>
+	<data name="LSomethingWentWrong" xml:space="preserve">
+       <value>Application not responding. Please try again later..</value>
+    </data>
+	
+  <data name="LWebserverNotResponding" xml:space="preserve">
+    <value>Server not responding. Please try again later.</value>
+  </data>
+  <data name="LNoInternetConnection" xml:space="preserve">
+    <value>No Internet Connection available</value>
+  </data>
+  <data name="LNoRecordsFound" xml:space="preserve">
+    <value>NO RECORDS FOUND</value>
+  </data>
+  <data name="LError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="LExitApp" xml:space="preserve">
+    <value>Are you sure you want to exit?</value>
+  </data>
+  <data name="LNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="LOk" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="LYes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="LExit" xml:space="preserve">
+    <value>VadodaraByFoot</value>
+  </data>
+  <data name="LOf" xml:space="preserve">
+    <value>of</value>
+  </data>
+	<data name="LMessage" xml:space="preserve">
+    <value>Message</value>
+  </data>
+	<data name="LInValidEmail" xml:space="preserve">
+    <value>Please enter valid Email Address.</value>
+  </data>
+
+  <data name="LCall" xml:space="preserve">
+    <value>Call</value>
+  </data>
+  <data name="LDialNumber" xml:space="preserve">
+    <value>Dial a Number</value>
+  </data>
+
+	<data name="LOfcAdress" xml:space="preserve">
+    <value>Vadodara Municipal Corporation, Vadodara - Gujarat</value>
+  </data>
+
+	<data name="LOfcName" xml:space="preserve">
+    <value>VADODARA BY FOOT</value>
+  </data>
+	<data name="LOfcPhoneNum" xml:space="preserve">
+    <value>+91 7984574238</value>
+  </data>
+	<data name="LOfcEmail" xml:space="preserve">
+    <value>info@vadodarabyfoot.com</value>
+  </data>
+	
+	<data name="TRegister" xml:space="preserve">
+    <value>REGISTRATION</value>
+  </data>
+	<data name="TLogin" xml:space="preserve">
+    <value>LOGIN</value>
+  </data>
+	<data name="TForgotPass" xml:space="preserve">
+    <value>Forgot Password?</value>
+  </data>
+	<data name="TWalktourList" xml:space="preserve">
+    <value>Walk Tours</value>
+  </data>
+  <data name="TFAQ" xml:space="preserve">
+    <value>FAQ's</value>
+  </data>
+	<data name="TAboutUs" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+	<data name="TContactUs" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="TFeedback" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="TWalkTouDetail" xml:space="preserve">
+    <value>Walk Tour Details</value>
+  </data>
+	<data name="TRouteCoversDetail" xml:space="preserve">
+    <value>Visiting Spots</value>
+  </data>
+	<data name="LEmptyEmail" xml:space="preserve">
+    <value>Please enter Email Address.</value>
+  </data>
+	<data name="LEmptyEmailUsername" xml:space="preserve">
+    <value>Please enter User name or Email Address.</value>
+  </data>
+	<data name="LEmptyPassword" xml:space="preserve">
+    <value>Please enter Password.</value>
+  </data>
+	<data name="LPassNotMatch" xml:space="preserve">
+    <value>Passwords does not match.</value>
+  </data>
+	<data name="LEmptyUserName" xml:space="preserve">
+    <value>Please enter User Name.</value>
+  </data>
+	<data name="LEmptyFirstName" xml:space="preserve">
+    <value>Please enter First Name.</value>
+  </data>
+	<data name="LEmptyLastName" xml:space="preserve">
+    <value>Please enter Last Name.</value>
+  </data>
+	<data name="LEmptyMobileNo" xml:space="preserve">
+    <value>Please enter Mobile Number.</value>
+  </data>
+	<data name="LEmptyFullName" xml:space="preserve">
+    <value>Please enter Full Name.</value>
+  </data>
+	<data name="LEmptySubject" xml:space="preserve">
+    <value>Please enter Subject.</value>
+  </data>
+	<data name="LEmptyMessage" xml:space="preserve">
+    <value>Please enter Message.</value>
+  </data>
+   <data name="LDownloadPodcast" xml:space="preserve">
+    <value>Download Podcast</value>
+  </data>
+	<data name="LDownloading" xml:space="preserve">
+    <value>Downloading..</value>
+  </data>
+	<data name="LAbt_Vadodara_By_Foot" xml:space="preserve">
+    <value>ABOUT VADODARA BY FOOT</value>
+  </data>
+  <data name="MHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="MAboutUs" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="MContactUs" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="MFeedback" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="MShare" xml:space="preserve">
+    <value>Share with Friends</value>
+  </data>
+  <data name="MFAQs" xml:space="preserve">
+    <value>FAQs</value>
+  </data>
+  <data name="MSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="MLogout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="MLogin" xml:space="preserve">
+    <value>Login</value>
+  </data>
+
+  <data name="LLengthPassword" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="LLengthUserNname" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="LLengthEmail" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="LLengthMobNum" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="LLengthSubject" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="LLengthMessage" xml:space="preserve">
+    <value>160</value>
+  </data>
+	<data name="LtxtbxSearchTour" xml:space="preserve">
+    <value> Search Tour</value>
+  </data>
+	<data name="LNoRecordsFound" xml:space="preserve">
+    <value>NO RECORDS FOUND</value>
+  </data>
+</root>

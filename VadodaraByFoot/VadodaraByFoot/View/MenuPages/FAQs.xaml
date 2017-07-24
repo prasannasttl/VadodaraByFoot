@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="VadodaraByFoot.View.FAQs"
+    BackgroundColor="#EEf1F5"
+    Padding="15"
+    xmlns:local="clr-namespace:VadodaraByFoot.AppResources"
+    Title="{x:Static local:AppResources.TFAQ}"
+    NavigationPage.BackButtonTitle= "">
+	<ContentPage.Content>
+     <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+       <ListView x:Name="lstFAQ" SeparatorVisibility="None" VerticalOptions="Fill" ItemTapped="lstFAQ_ItemTapped" HasUnevenRows="True" BackgroundColor="Transparent">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <ViewCell.View>
+                  <StackLayout HorizontalOptions="Fill" VerticalOptions="Center" Padding="0,0,0,15">
+                   <StackLayout HorizontalOptions="Fill" VerticalOptions="Center" BackgroundColor="White" Padding="15">
+                             
+                    <StackLayout ClassId="{Binding TapId}" VerticalOptions="Center" Orientation="Horizontal" HeightRequest="30" >
+                        <Label Text="{Binding title}" HorizontalOptions="StartAndExpand"
+                                            TextColor="#222222" VerticalTextAlignment="Center"
+                                            FontSize="{Binding TitleFontSize}" FontAttributes="Bold"
+                                            FontFamily="{DynamicResource FontTitleFamily}"
+                                            LineBreakMode="TailTruncation"/>
+                        <Image HeightRequest="20" WidthRequest="20" Source="{Binding expand_collapse}" HorizontalOptions="End" ClassId="{Binding TapId}">
+                          <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="img_Tapped" />
+                          </Image.GestureRecognizers>
+                        </Image>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="stck_Tapped"/>
+                          </StackLayout.GestureRecognizers>
+                      </StackLayout>
+                      <StackLayout Orientation="Vertical" BackgroundColor="#ffffff" IsVisible="{Binding ObjIsVisible}" HorizontalOptions="FillAndExpand" Spacing="15">
+                        <StackLayout Style="{StaticResource BlackLineStyle}"/>
+                        <Label Text="{Binding content}"  Style="{StaticResource lblTextDetailStyle}" 
+                                            VerticalTextAlignment="Start"
+                                            FontSize="{Binding DetailFontSize}"/>
+                      </StackLayout>
+                    </StackLayout>
+                   </StackLayout>
+                  </ViewCell.View>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+        <ActivityIndicator x:Name="loading" Style="{StaticResource ProgressOverlayStyle}" />
+      </Grid>
+	</ContentPage.Content>
+    <!--<ContentPage.ToolbarItems>
+     <ToolbarItem Name="TbSearch" Icon="top_search_icon" Priority="0" Clicked="Search_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+</ContentPage>

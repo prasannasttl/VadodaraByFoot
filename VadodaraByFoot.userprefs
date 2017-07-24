@@ -1,0 +1,38 @@
+﻿<Properties StartupConfiguration="{A58C74D6-BAE9-4564-AA4E-281A7880328B}|Default">
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Volumes/DATA HD/URJA/Baroda/VadodaraByFoot/VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/WalkToursListPage.xaml.cs" relfile="VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/WalkToursListPage.xaml.cs" line="77" column="1" />
+      <Breakpoint file="/Volumes/DATA HD/URJA/Baroda/VadodaraByFoot/VadodaraByFoot/VadodaraByFoot/View/FAQs.xaml.cs" relfile="VadodaraByFoot/VadodaraByFoot/View/FAQs.xaml.cs" line="64" column="1" />
+      <Breakpoint file="/Volumes/DATA HD/URJA/Baroda/VadodaraByFoot/VadodaraByFoot/VadodaraByFoot/View/FAQs.xaml.cs" relfile="VadodaraByFoot/VadodaraByFoot/View/FAQs.xaml.cs" line="66" column="1" />
+      <Breakpoint file="/Volumes/DATA HD/URJA/Baroda/VadodaraByFoot/VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/WalkToursListPage.xaml.cs" relfile="VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/WalkToursListPage.xaml.cs" line="83" column="1" />
+      <Breakpoint file="/Volumes/DATA HD/URJA/Baroda/VadodaraByFoot/VadodaraByFoot/VadodaraByFoot.iOS/Renderers/CustomMapRenderer.cs" relfile="VadodaraByFoot/VadodaraByFoot.iOS/Renderers/CustomMapRenderer.cs" line="85" column="1" />
+      <Breakpoint file="/Volumes/DATA HD/URJA/Baroda/VadodaraByFoot/VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/WalkToursListPage.xaml.cs" relfile="VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/WalkToursListPage.xaml.cs" line="93" column="1" />
+      <Breakpoint file="/Volumes/DATA HD/URJA/Baroda/VadodaraByFoot/VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/WalkToursListPage.xaml.cs" relfile="VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/WalkToursListPage.xaml.cs" line="91" column="1" />
+      <Breakpoint file="/Volumes/DATA HD/URJA/Baroda/VadodaraByFoot/VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/WalkTourDetailPage.xaml.cs" relfile="VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/WalkTourDetailPage.xaml.cs" line="89" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="VadodaraByFoot/VadodaraByFoot/ServiceLayer/CallWebservice.cs" line="32" offsetX="724" offsetY="620" expression="request.Content" liveUpdate="False" />
+    <Watch file="VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/RouteCoversPage.xaml.cs" line="73" offsetX="1061" offsetY="1440" expression="lblTourDescription.Text" liveUpdate="False" />
+    <Watch file="VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/WalkTourDetailPage.xaml.cs" line="164" offsetX="1821" offsetY="3260" expression="response.geocoded_waypoints[9]" liveUpdate="False" />
+    <Watch file="VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/RouteCoversPage.xaml.cs" line="206" offsetX="984" offsetY="4064" expression="customMap.Pins" liveUpdate="False" />
+    <Watch file="VadodaraByFoot/VadodaraByFoot.Android/Renderers/CustomMapRenderer.cs" line="74" offsetX="715" offsetY="1460" expression="isDrawn" liveUpdate="False" />
+    <Watch file="VadodaraByFoot/VadodaraByFoot.Android/Renderers/CustomMapRenderer.cs" line="62" offsetX="561" offsetY="1220" expression="polylineOptions" liveUpdate="False" />
+    <Watch file="VadodaraByFoot/VadodaraByFoot.Android/Renderers/CustomMapRenderer.cs" line="68" offsetX="715" offsetY="1340" expression="e.PropertyName" liveUpdate="False" />
+    <Watch file="VadodaraByFoot/VadodaraByFoot.iOS/Renderers/CustomMapRenderer.cs" line="154" offsetX="811" offsetY="3060" expression="annotationView.Image" liveUpdate="False" />
+    <Watch file="VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/RouteCoversPage.xaml.cs" line="149" offsetX="1179" offsetY="1703" expression="AudioPlaying" liveUpdate="False" />
+    <Watch file="VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/RouteCoversPage.xaml.cs" line="161" offsetX="1199" offsetY="1833" expression="AudioPlaying" liveUpdate="False" />
+    <Watch file="VadodaraByFoot/VadodaraByFoot.Android/MainActivity.cs" line="58" offsetX="680" offsetY="1140" expression="density" liveUpdate="False" />
+    <Watch file="VadodaraByFoot/VadodaraByFoot.Android/MainActivity.cs" line="58" offsetX="651" offsetY="1140" expression="Resources.DisplayMetrics.Density" liveUpdate="False" />
+    <Watch file="VadodaraByFoot/VadodaraByFoot.Android/MainActivity.cs" line="81" offsetX="834" offsetY="1600" expression="AppStatics.AndroidScreenResolutionType" liveUpdate="False" />
+    <Watch file="VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/RouteCoversPage.xaml.cs" line="234" offsetX="1021" offsetY="4198" expression="BufferingFlag" liveUpdate="False" />
+    <Watch file="VadodaraByFoot/VadodaraByFoot.Android/DependencyService/SimpleAudioPlayerImplementation.cs" line="26" offsetX="882" offsetY="500" expression="player.Duration" liveUpdate="False" />
+    <Watch file="VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/RouteCoversPage.xaml.cs" line="254" offsetX="641" offsetY="3840" expression="BufferingAudio.IsRunning" liveUpdate="False" />
+    <Watch file="VadodaraByFoot/VadodaraByFoot/View/WalkTourModule/RouteCoversPage.xaml.cs" line="102" offsetX="487" offsetY="1500" expression="timer.getInterval()" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.ItemProperties.VadodaraByFoot.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.E2AD562A-B584-43A6-B4AA-CE8F25EA1F4B" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.VadodaraByFoot.Android AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Nexus 4 (Lollipop)" />
+</Properties>

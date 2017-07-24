@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="VadodaraByFoot.View.MenuPages.FeedBack"
+    BackgroundColor="#EAEEF2"
+    xmlns:local="clr-namespace:VadodaraByFoot.AppResources"
+    xmlns:control="clr-namespace:VadodaraByFoot.CustomControls"
+    Title="{x:Static local:AppResources.TFeedback}"
+    NavigationPage.BackButtonTitle= ""
+    Padding="15,15,15,0">
+	<ContentPage.Content>
+     <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+     <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <StackLayout VerticalOptions="Start" BackgroundColor="Transparent" Padding="10,15,15,15">
+
+                 <Label x:Name="lblFeedBackDescription" Margin="5,0,5,0" Style="{StaticResource lblTextDetailStyle}" Text="Please give feedback of VadadoraByFoot mobile application. We welcome your feedback about the service you have received from our VadodaraByFoot Application."/>
+                 <StackLayout Spacing="0" Margin="0,0,0,10">
+                 <Label x:Name="lblFullName" 
+                        Text="{x:Static local:AppResources.PlacheholderFullName}" 
+                        Style="{StaticResource PlaceholderEntryStyleBlack}"/>
+                 <Entry x:Name="txtbxFullName" 
+                        Placeholder="{x:Static local:AppResources.PlacheholderFullName}" 
+                        TextChanged="FullName_TextChanged" 
+                        Style="{StaticResource EntryStyleblack}"
+                        ClassId="{x:Static local:AppResources.LLengthUserNname}"/>
+                  <StackLayout Style="{StaticResource BlackLineStyle}" BackgroundColor="#707070" >
+                      <StackLayout.Margin>
+                        <OnPlatform x:TypeArguments="Thickness" Android="5,0,0,0" iOS="5,4,0,0" />
+                    </StackLayout.Margin></StackLayout>
+                 </StackLayout>
+                
+                  <StackLayout Spacing="0" Margin="0,0,0,10">
+                 <Label x:Name="lblEmail" 
+                        Text="{x:Static local:AppResources.PlaceHolderEmailAddress}" 
+                        Style="{StaticResource PlaceholderEntryStyleBlack}"/>
+                 <Entry x:Name="txtbxEmail" 
+                           Keyboard="Email"
+                           Placeholder="{x:Static local:AppResources.PlaceHolderEmailAddress}" 
+                           TextChanged="Email_TextChanged" 
+                           Style="{StaticResource EntryStyleblack}"
+                           ClassId="{x:Static local:AppResources.LLengthEmail}"/>
+                    <StackLayout Style="{StaticResource BlackLineStyle}" BackgroundColor="#707070" >
+                      <StackLayout.Margin>
+                        <OnPlatform x:TypeArguments="Thickness" Android="5,0,0,0" iOS="5,4,0,0" />
+                    </StackLayout.Margin></StackLayout>
+                 </StackLayout>
+                
+                  <StackLayout Spacing="0" Margin="0,0,0,10">
+                 <Label x:Name="lblSubject" 
+                        Text="{x:Static local:AppResources.PlacheholderSubject}" 
+                        Style="{StaticResource PlaceholderEntryStyleBlack}"/>
+                 <Entry x:Name="txtbxSubject" 
+                           Placeholder="{x:Static local:AppResources.PlacheholderSubject}" 
+                           TextChanged="Subject_TextChanged" 
+                           Style="{StaticResource EntryStyleblack}"
+                           ClassId="{x:Static local:AppResources.LLengthSubject}"/>
+                    <StackLayout Style="{StaticResource BlackLineStyle}" BackgroundColor="#707070" >
+                      <StackLayout.Margin>
+                        <OnPlatform x:TypeArguments="Thickness" Android="5,0,0,0" iOS="5,4,0,0" />
+                    </StackLayout.Margin></StackLayout>
+                 </StackLayout>
+                
+                <StackLayout Spacing="0" Margin="0,0,0,10">
+                     <Label x:Name="lblMessage" 
+                            Text="{x:Static local:AppResources.PlacheholderMessage}" 
+                            Style="{StaticResource PlaceholderEntryStyleBlack}"/>
+                     <Grid>
+                          <Editor x:Name="txtbxMessage" TextChanged="Message_TextChanged" 
+                            Style="{StaticResource EditorStyleblack}"
+                            ClassId="{x:Static local:AppResources.LLengthMessage}"/>
+                          <Label IsEnabled="False"  
+                                x:Name="MessageTextOverlap" Margin="5,5,0,0"
+                                Text="{x:Static local:AppResources.PlacheholderMessage}" 
+                                TextColor="#484848" 
+                                Style="{StaticResource PlaceholderEntryStyleBlack}" Opacity="1"/>
+                     </Grid>
+                     <StackLayout Style="{StaticResource BlackLineStyle}" BackgroundColor="#707070" >
+                      <StackLayout.Margin>
+                        <OnPlatform x:TypeArguments="Thickness" Android="5,0,0,0" iOS="5,4,0,0" />
+                    </StackLayout.Margin></StackLayout>
+                </StackLayout>
+
+                    
+                 <Button x:Name="btnSubmit" 
+                         Text="{x:Static local:AppResources.LbtnSubmit}" 
+                         Clicked="SubmitButton_Clicked"
+                         Style="{StaticResource ButtonStyle}" 
+                         FontAttributes="None" Margin="0,25,0,0"/>
+             </StackLayout>
+      </ScrollView>
+     <ActivityIndicator IsRunning="false" x:Name="loading" Style="{StaticResource ProgressOverlayStyle}" />
+     </Grid>
+    </ContentPage.Content>
+</ContentPage>

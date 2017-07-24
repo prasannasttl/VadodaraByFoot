@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="VadodaraByFoot.View.WalkTourModule.WalkToursListPage"
+    xmlns:control="clr-namespace:VadodaraByFoot.CustomControls"
+    xmlns:local="clr-namespace:VadodaraByFoot.AppResources"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    NavigationPage.BackButtonTitle= "" 
+    Title="{x:Static local:AppResources.TWalktourList}">
+    <ContentPage.Content>
+      <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" RowSpacing="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions> 
+
+            <StackLayout x:Name="SearchhStack" BackgroundColor="#EDECED" 
+                Padding="8" HeightRequest="0" Grid.Row="0" IsVisible="false"
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid BackgroundColor="White" Padding="5,0,5,0"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Entry HeightRequest="35" x:Name="txtbxSearch" 
+                TextChanged="txtbxSearch_TextChanged" BackgroundColor="White"
+                TextColor="#222222" PlaceholderColor="#222222" 
+                Placeholder="{x:Static local:AppResources.LtxtbxSearchTour}"
+                VerticalOptions="CenterAndExpand" FontSize="Small"
+                FontFamily="{DynamicResource FontDetailFamily}"
+                Margin="5,0,5,0"/>
+                    </Grid>
+            </StackLayout>
+
+           
+          <ListView x:Name="lstWalkTour" Grid.Row="1"
+            HasUnevenRows="true"  SeparatorVisibility="None" 
+                ItemSelected="lstWalkTour_ItemSelected" IsPullToRefreshEnabled="true"
+                Refreshing="lstWalkTour_Refreshing">
+          <ListView.ItemTemplate>
+              <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                       <Grid HorizontalOptions="FillAndExpand" >
+                             <Image 
+                                HorizontalOptions="FillAndExpand" 
+                                Aspect="Fill"
+                                Source="home_place_holder.png">
+                                <Image.HeightRequest>
+                                   <OnIdiom x:TypeArguments="x:Double" Phone="185" Tablet="300" />
+                                </Image.HeightRequest>
+                              </Image>
+                             <ffimageloading:CachedImage Source="{Binding is_image}"
+                                HorizontalOptions="FillAndExpand" 
+                                Aspect="AspectFill"
+                                LoadingPlaceholder="home_place_holder.png"
+                                DownsampleToViewSize="true">
+                                <ffimageloading:CachedImage.HeightRequest>
+                                   <OnIdiom x:TypeArguments="x:Double" Phone="185" Tablet="300" />
+                                </ffimageloading:CachedImage.HeightRequest>
+                              </ffimageloading:CachedImage>
+                             <control:Gradient_Stack HorizontalOptions="FillAndExpand" StartColor="{Binding StartColorGradient}" EndColor="{Binding EndColorGradient}">
+                                <control:Gradient_Stack.HeightRequest>
+                                   <OnIdiom x:TypeArguments="x:Double" Phone="60" Tablet="75" />
+                                </control:Gradient_Stack.HeightRequest>
+                              <Label Text="{Binding title}" 
+                                VerticalOptions="EndAndExpand" 
+                                VerticalTextAlignment="Center" 
+                                HorizontalOptions="FillAndExpand" 
+                                FontSize="{Binding TitleFontSize}"
+                                FontAttributes="Bold"
+                                TextColor="White" 
+                                Margin="10,0,0,0"
+                                FontFamily="{DynamicResource FontTitleFamily}"
+                                             LineBreakMode="TailTruncation">
+                                <Label.HeightRequest>
+                                   <OnIdiom x:TypeArguments="x:Double" Phone="45" Tablet="55" />
+                                </Label.HeightRequest>
+                              </Label>
+                             </control:Gradient_Stack>
+                       </Grid>
+                                
+                    </ViewCell.View>
+                </ViewCell>
+             </DataTemplate>
+          </ListView.ItemTemplate>
+     </ListView>
+             <StackLayout Padding="0,10,0,0" Grid.Row="1" VerticalOptions="Start" HorizontalOptions="Center">
+                 <Label  x:Name="lblNoRecord" Text="{x:Static local:AppResources.LNoRecordsFound}" 
+                VerticalOptions="Center" VerticalTextAlignment="Center" 
+                HorizontalOptions="Center" HorizontalTextAlignment="Center" 
+                TextColor="#222222" FontAttributes="Bold" FontSize="Medium"
+                IsEnabled="false" IsVisible="false"
+                FontFamily="{DynamicResource FontTitleFamily}"/>
+            </StackLayout>
+     <ActivityIndicator Grid.Row="0" Grid.RowSpan="2" x:Name="loading" Style="{StaticResource ProgressOverlayStyle}" />
+        
+  </Grid>
+</ContentPage.Content>
+    <ContentPage.ToolbarItems>
+      <!--<ToolbarItem Name="TbNotification" Icon="top_notification_icon" Priority="0" Clicked="Notification_Clicked"/>-->
+      <ToolbarItem x:Name="TbSearch" Icon="top_search_icon.png" Priority="0" Clicked="Search_Clicked"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>

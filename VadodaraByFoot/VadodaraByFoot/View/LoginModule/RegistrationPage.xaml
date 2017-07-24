@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="VadodaraByFoot.View.LoginModule.RegistrationPage"
+    BackgroundImage="login_reg_bg" 
+    xmlns:local="clr-namespace:VadodaraByFoot.AppResources"
+    xmlns:control="clr-namespace:VadodaraByFoot.CustomControls"
+    NavigationPage.BackButtonTitle= "" 
+    Title="{x:Static local:AppResources.TRegister}">
+	<ContentPage.Content>
+     <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+     <ScrollView VerticalOptions="Start" Orientation="Vertical">
+        <StackLayout VerticalOptions="Start" BackgroundColor="Transparent" >
+         <StackLayout.Padding>
+            <OnIdiom x:TypeArguments="Thickness" Phone="50,25,50,25" Tablet="120,30,120,100" />
+         </StackLayout.Padding>
+
+                <StackLayout Spacing="0" Margin="0,0,0,10">
+                 <Label x:Name="lblFirstName" 
+                        Text="{x:Static local:AppResources.PlacheholderFirstName}" 
+                        Style="{StaticResource PlaceholderEntryStyle}"/>
+                 <Entry x:Name="txtbxFirstName" 
+                        Placeholder="{x:Static local:AppResources.PlacheholderFirstName}" 
+                        TextChanged="FirstName_TextChanged" 
+                        Style="{StaticResource EntryStyle}"
+                        ClassId="{x:Static local:AppResources.LLengthUserNname}"/>
+                 <StackLayout Style="{StaticResource WhiteLineStyle}"/>
+                 </StackLayout>
+
+                <StackLayout Spacing="0" Margin="0,0,0,10">
+                 <Label x:Name="lblLastName" 
+                        Text="{x:Static local:AppResources.PlacheholderLastName}" 
+                        Style="{StaticResource PlaceholderEntryStyle}"/>
+                 <Entry x:Name="txtbxLastName" 
+                        Placeholder="{x:Static local:AppResources.PlacheholderLastName}" 
+                        TextChanged="LastName_TextChanged" 
+                        Style="{StaticResource EntryStyle}"
+                        ClassId="{x:Static local:AppResources.LLengthUserNname}"/>
+                    <StackLayout Style="{StaticResource WhiteLineStyle}"/>
+                 </StackLayout>
+
+                 <StackLayout Spacing="0" Margin="0,0,0,10">
+                 <Label x:Name="lblName" 
+                        Text="{x:Static local:AppResources.PlacheholderName}" 
+                        Style="{StaticResource PlaceholderEntryStyle}"/>
+                 <Entry x:Name="txtbxName" 
+                        Placeholder="{x:Static local:AppResources.PlacheholderName}" 
+                        TextChanged="Name_TextChanged" 
+                        Style="{StaticResource EntryStyle}"
+                         ClassId="{x:Static local:AppResources.LLengthUserNname}"/>
+                    <StackLayout Style="{StaticResource WhiteLineStyle}"/>
+                 </StackLayout>
+                
+                  <StackLayout Spacing="0" Margin="0,0,0,10">
+                 <Label x:Name="lblEmail" 
+                        Text="{x:Static local:AppResources.PlaceHolderEmail}" 
+                        Style="{StaticResource PlaceholderEntryStyle}"/>
+                 <Entry x:Name="txtbxEmail" 
+                           Keyboard="Email"
+                           Placeholder="{x:Static local:AppResources.PlaceHolderEmail}" 
+                           TextChanged="Email_TextChanged" 
+                           Style="{StaticResource EntryStyle}"
+                          ClassId="{x:Static local:AppResources.LLengthEmail}"/>
+                    <StackLayout Style="{StaticResource WhiteLineStyle}"/>
+                 </StackLayout>
+                
+                  <StackLayout Spacing="0" Margin="0,0,0,10">
+                 <Label x:Name="lblMobNum" 
+                        Text="{x:Static local:AppResources.PlacheholderMobNo}" 
+                        Style="{StaticResource PlaceholderEntryStyle}"/>
+                 <Entry x:Name="txtbxMobNum" 
+                           Keyboard="Telephone"
+                           Placeholder="{x:Static local:AppResources.PlacheholderMobNo}" 
+                           TextChanged="MobNum_TextChanged" 
+                           Style="{StaticResource EntryStyle}"
+                          ClassId="{x:Static local:AppResources.LLengthMobNum}"/>
+                    <StackLayout Style="{StaticResource WhiteLineStyle}"/>
+                 </StackLayout>
+                
+                  <StackLayout Spacing="0" Margin="0,0,0,10">
+                 <Label x:Name="lblPass" 
+                        Text="{x:Static local:AppResources.PlacheholderPassword}" 
+                        Style="{StaticResource PlaceholderEntryStyle}"/>
+                 <Entry x:Name="txtbxPass" 
+                           IsPassword="true"
+                           Placeholder="{x:Static local:AppResources.PlacheholderPassword}" 
+                           TextChanged="Password_TextChanged" 
+                           Style="{StaticResource EntryStyle}"
+                          ClassId="{x:Static local:AppResources.LLengthPassword}"/>
+                    <StackLayout Style="{StaticResource WhiteLineStyle}"/>
+                 </StackLayout>
+                
+                 <StackLayout Spacing="0" Margin="0,0,0,10">
+                 <Label x:Name="lblConfirmPass" 
+                        Text="{x:Static local:AppResources.PlacheholderConfirmPass}" 
+                        Style="{StaticResource PlaceholderEntryStyle}"/>
+                 <Entry x:Name="txtbxConfirmPass" 
+                           IsPassword="true"
+                           Placeholder="{x:Static local:AppResources.PlacheholderConfirmPass}" 
+                           TextChanged="ConfirmPassword_TextChanged" 
+                           Style="{StaticResource EntryStyle}"
+                         ClassId="{x:Static local:AppResources.LLengthPassword}"/>
+                    <StackLayout Style="{StaticResource WhiteLineStyle}"/>
+                 </StackLayout>
+                  <Grid HorizontalOptions="FillAndExpand" Padding="0,0,0,30">
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions> 
+                        <control:Checkbox  Grid.Column="0" HeightRequest="35"
+                        WidthRequest="35" VerticalOptions="Start"  Margin="0,2,0,0"
+                        x:Name="chckbxTermsConditions" Checked="false" />
+                   <StackLayout Spacing="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                    <Label x:Name="lblAgreeTermCondition" Text="{x:Static local:AppResources.lblAgreeTermCondition}" VerticalTextAlignment="Center"  TextColor="White" FontSize="Micro"/>
+                    <control:UnderLineLabel x:Name="lblAgreeTermConditionLink" Text="{x:Static local:AppResources.lblAgreeTermConditionLink}"  TextColor="#01AFEE" VerticalTextAlignment="Center" FontSize="Micro">
+                           <control:UnderLineLabel.GestureRecognizers>
+                             <TapGestureRecognizer Tapped="OnTermsConditionTapped" />
+                           </control:UnderLineLabel.GestureRecognizers></control:UnderLineLabel>
+                            </StackLayout>
+                            </Grid>
+                 <Button x:Name="btnRegistration" 
+                         Text="{x:Static local:AppResources.btnRegister}" 
+                         Clicked="RegistrationButton_Clicked"
+                         Style="{StaticResource ButtonStyle}" />
+                    
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label x:Name="lblAlreadyHaveAccnt" 
+                           Text="{x:Static local:AppResources.lblAlreadyhaveaccount}" 
+                           Style="{StaticResource donthaveaccountStyle}"/>
+                    <Label x:Name="lblLogin"  
+                           Text="{x:Static local:AppResources.btnLogin}"
+                           Style="{StaticResource RegisterStyle}">
+                           <Label.GestureRecognizers>
+                             <TapGestureRecognizer Tapped="OnLoginTapGestureRecognizerTapped" />
+                           </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+        </StackLayout>
+      </ScrollView>
+     <ActivityIndicator IsRunning="false" x:Name="loading" Style="{StaticResource ProgressOverlayStyle}" Color="White"/>
+     </Grid>
+	</ContentPage.Content>
+</ContentPage>

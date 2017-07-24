@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VadodaraByFoot.View.LoginModule.LoginPage"
+             BackgroundImage="login_reg_bg"
+             xmlns:local="clr-namespace:VadodaraByFoot.AppResources"
+             Title="{x:Static local:AppResources.TLogin}"
+             NavigationPage.BackButtonTitle= "" >
+	<ContentPage.Resources>
+    <ResourceDictionary>
+         <Style x:Key="forgotPassStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="Small" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="Margin" Value="5,0,5,15" />
+            <Setter Property="HorizontalTextAlignment" Value="End" />
+            <Setter Property="FontFamily" Value="{DynamicResource FontDetailFamily}" />
+        </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content>
+    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+     <ScrollView x:Name="LoginPageScrollView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical">
+       
+        <Grid VerticalOptions="CenterAndExpand" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+         <Grid.Padding>
+            <OnIdiom x:TypeArguments="Thickness" Phone="50,0,50,0" Tablet="120,30,120,100" />
+         </Grid.Padding>
+         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+          <Image x:Name="ImgLogo" Source="login_logo" 
+			 HorizontalOptions="Center" Grid.Row="0"/>
+          <StackLayout Grid.Row="1" BackgroundColor="Transparent" Padding="0,15,0,0">
+                    
+                <StackLayout Spacing="0" Margin="0,0,0,10">
+                 <Label x:Name="lblEmail" 
+						Text="{x:Static local:AppResources.Placheholder_UsernameEmail}" 
+                        Style="{StaticResource PlaceholderEntryStyle}"/>
+                 <Entry x:Name="txtbxEmail" 
+                           Keyboard="Email"
+                           Placeholder="{x:Static local:AppResources.Placheholder_UsernameEmail}" 
+                           TextChanged="Email_TextChanged" 
+                           Style="{StaticResource EntryStyle}"
+                           ClassId="{x:Static local:AppResources.LLengthEmail}"/>
+				    <StackLayout Style="{StaticResource WhiteLineStyle}"/>
+                 </StackLayout>
+
+                <StackLayout Spacing="0" Margin="0,0,0,10">
+                 <Label x:Name="lblPassword" 
+                        Text="{x:Static local:AppResources.PlacheholderPassword}" 
+                        Style="{StaticResource PlaceholderEntryStyle}"/>
+                 
+                    <Entry x:Name="txtbxPassword" 
+                           IsPassword="True" 
+                           Placeholder="{x:Static local:AppResources.PlacheholderPassword}" 
+						   TextChanged="Password_TextChanged" 
+                           Style="{StaticResource EntryStyle}"
+                           ClassId="{x:Static local:AppResources.LLengthPassword}"/>
+                    <StackLayout Style="{StaticResource WhiteLineStyle}"/>
+				</StackLayout>
+
+                
+                 <Label x:Name="LblForgotPassword" 
+                   		Text="{x:Static local:AppResources.lblForgotPass}" 
+                        Style="{StaticResource forgotPassStyle}">
+                        <Label.GestureRecognizers>
+                             <TapGestureRecognizer Tapped="OnForgotPassTapGestureRecognizerTapped" />
+                        </Label.GestureRecognizers>
+                 </Label>
+				 <Button x:Name="btnLogin" 
+                         Text="{x:Static local:AppResources.btnLogin}" 
+						 Clicked="LoginButton_Clicked"
+                         Style="{StaticResource ButtonStyle}" Margin="0,15,0,15"/>
+					
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label x:Name="lblDontHaveAccnt" 
+                           Text="{x:Static local:AppResources.lblDnthaveaccount}" 
+                           Style="{StaticResource donthaveaccountStyle}"/>
+                    <Label x:Name="lblRegistration"  
+                           Text="{x:Static local:AppResources.lblRegistration}"
+                           Style="{StaticResource RegisterStyle}">
+                           <Label.GestureRecognizers>
+                             <TapGestureRecognizer Tapped="OnRegisterTapGestureRecognizerTapped" />
+                           </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+           </StackLayout>
+      </Grid>
+    </ScrollView>
+
+    <StackLayout x:Name="ForgotPassPopupStack" IsVisible="false" IsEnabled="false" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+
+         <StackLayout.Padding>
+            <OnIdiom x:TypeArguments="Thickness" Phone="60,30,60,0" Tablet="120,100,120,100" />
+         </StackLayout.Padding>
+                
+         <Frame OutlineColor="White" Padding="0"
+             BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
+         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="White" Padding="20,35,20,35">
+              <StackLayout.Spacing>
+                 <OnPlatform x:TypeArguments="x:Double" Android="15" iOS="22" />
+              </StackLayout.Spacing>
+            <Label  x:Name="lblForgotPasTitlePage" Style="{StaticResource lblTexTitleStyle}" Text="{x:Static local:AppResources.TForgotPass}" TextColor="#707070" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+            
+           <Label x:Name="lblForgotPass"
+                            Text="{x:Static local:AppResources.LForgotPassDetailText}" 
+                             Style="{StaticResource PlaceholderEntryStyleBlack}"
+                        HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                        Opacity="1"/>
+             <Frame   VerticalOptions="Center"
+                        OutlineColor="#070707"
+               Padding="3" CornerRadius="0">
+                  <Entry x:Name="txtbxForgotPass" Margin="5,0,0,0"
+                               Placeholder="{x:Static local:AppResources.Placheholder_UsernameEmail}" 
+                               TextChanged="ForgotPass_TextChanged" 
+                               Style="{StaticResource EntryStyleblack}"
+                            ClassId="{x:Static local:AppResources.LLengthEmail}"/>
+             </Frame>
+          
+           <Grid HorizontalOptions="FillAndExpand" ColumnSpacing="20">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+              
+                <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions> 
+           
+              <Button Grid.Column="0" x:Name="btnForgotPass"  
+                    Text="{x:Static local:AppResources.LbtnSubmit}" 
+                    Clicked="ForgotPassButton_Clicked"
+                    Style="{StaticResource ButtonStyle}" BorderRadius="0" />
+              <Button Grid.Column="1" x:Name="btnForgotPassCancel"   
+                    Text="{x:Static local:AppResources.LbtnCancel}" 
+                    Clicked="ForgotPassCancelButton_Clicked"
+                    Style="{StaticResource ButtonStyle}" BorderRadius="0" />
+            
+              </Grid>          
+           </StackLayout>
+     
+             </Frame>
+       </StackLayout>
+    <ActivityIndicator IsRunning="false" x:Name="loading" Style="{StaticResource ProgressOverlayStyle}" Color="White"/>
+   </Grid>
+
+
+
+  </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="VadodaraByFoot.View.MenuPages.About_us"
+    BackgroundColor="White"
+    xmlns:local="clr-namespace:VadodaraByFoot.AppResources"
+    xmlns:control="clr-namespace:VadodaraByFoot.CustomControls"
+    Title="{x:Static local:AppResources.TAboutUs}"
+    NavigationPage.BackButtonTitle= "" >
+    <ContentPage.Content>
+      <Grid VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand">
+        <ScrollView x:Name="ContentLayout" IsVisible="false">
+          <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0">
+            <Grid x:Name="imgHeaderGrid" HorizontalOptions="FillAndExpand">
+                <Image  x:Name="imgHeaderPlaceholder" Aspect="Fill" Source="route_place_holder" HorizontalOptions="FillAndExpand"  VerticalOptions="Center" />
+                <Image  x:Name="imgHeader" Aspect="AspectFill" Source="route_place_holder" HorizontalOptions="FillAndExpand"  VerticalOptions="Center" />
+               <!-- <StackLayout x:Name="imgHeaderGradientGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Black" Opacity="0.50"/>-->
+            </Grid>
+            <StackLayout  Padding="10" Spacing="10">
+              <Label x:Name="lblTourName" Style="{StaticResource lblTexTitleStyle}"/>
+              <StackLayout Style="{StaticResource BlackLineStyle}"/>
+              <Label x:Name="lblTourDescription" Style="{StaticResource lblTextDetailStyle}" />
+               </StackLayout>
+          </StackLayout>
+         </ScrollView>
+        <control:Gradient_Stack HorizontalOptions="FillAndExpand" VerticalOptions="End" StartColor="Transparent" EndColor="White" HeightRequest="80"/>
+        <ActivityIndicator x:Name="loading" Style="{StaticResource ProgressOverlayStyle}" />
+      </Grid>
+   </ContentPage.Content>
+    <!--<ContentPage.ToolbarItems>
+     <ToolbarItem Name="TbShare" Icon="top_share_icon" Priority="0" Clicked="Share_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+ </ContentPage>

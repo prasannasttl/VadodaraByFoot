@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="VadodaraByFoot.View.MenuModule.MenuMaster"
+    xmlns:DetailPage = "clr-namespace:VadodaraByFoot.View.WalkTourModule" 
+    xmlns:local="clr-namespace:VadodaraByFoot.AppResources"
+    xmlns:converter="clr-namespace:VadodaraByFoot.Converters" IsPresentedChanged= "Handle_IsPresentedChanged"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
+
+    <MasterDetailPage.Master >
+      <ContentPage Icon="top_menu_icon" Title="Menu" >
+       <ContentPage.Resources>
+        <ResourceDictionary>
+          <converter:MenuItemSelectionConverter x:Key="MenuItemSelectionConverter" />
+          <Style x:Key="lblMenuItemStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="{Binding TitleFontSize}" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="VerticalTextAlignment" Value="Center" /> 
+            <Setter Property="FontFamily" Value="{DynamicResource FontDetailFamily}" /> 
+          </Style>
+          <Style x:Key="imgMenuItemStyle" TargetType="Image">
+            <Setter Property="Aspect" Value="AspectFit" />
+          </Style>
+       </ResourceDictionary>
+     </ContentPage.Resources>
+    <ContentPage.Content>
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+               <Image  Source="menu_drawer_bg" 
+                Aspect="Fill" HorizontalOptions="FillAndExpand" 
+                VerticalOptions="FillAndExpand" IsEnabled="false"/>  
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="15" RowSpacing="10">
+                 <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="50"/>
+                 </Grid.RowDefinitions>
+              
+               <Grid Grid.Row="0" >
+                   <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout x:Name="UserProfileStack" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                       <Grid  HeightRequest="90" WidthRequest="90" >
+                            <Image x:Name="imgUserPlaceholder" Grid.Column="0" Source="menu_drawer_user" HorizontalOptions="Center" HeightRequest="90" WidthRequest="90" />
+                            <ffimageloading:CachedImage x:Name="imgUser" DownsampleToViewSize="true" Source="menu_drawer_user"
+                                    LoadingPlaceholder="menu_drawer_user" HeightRequest="90" WidthRequest="90"
+                                    HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                           <ffimageloading:CachedImage.Transformations>
+                              <fftransformations:CircleTransformation />
+                            </ffimageloading:CachedImage.Transformations>
+                        </ffimageloading:CachedImage>
+                      </Grid>
+                        <Label x:Name="lblUserName" TextColor="White" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" HeightRequest="0"
+                                FontFamily="{DynamicResource FontDetailFamily}"/>
+                        <Label x:Name="lblUserNameEmailId" TextColor="White" FontSize="Small" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" HeightRequest="0"
+                                FontFamily="{DynamicResource FontDetailFamily}"/>
+                                
+                    </StackLayout>
+                   <!-- <Image HorizontalOptions="End" VerticalOptions="Start" Grid.Column="1" Source="menu_drawer_close_icon" >
+                       <Image.GestureRecognizers>
+                          <TapGestureRecognizer Tapped="btnCloseTapped" />
+                       </Image.GestureRecognizers>
+                    </Image>-->
+                </Grid>
+      
+
+            <ListView Grid.Row="1" x:Name="lstMenu" HasUnevenRows="true" SeparatorVisibility="None" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" ItemSelected="Menu_ItemSelected" >
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                       <Grid HorizontalOptions="FillAndExpand" Padding="0,0,0,0" >
+                        <Image  Aspect="AspectFill" Source="menu_drawer_selection" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand"
+                               Opacity="{Binding IsSelected, Converter={StaticResource MenuItemSelectionConverter}}"/>
+                            <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="Auto"/>
+                              <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                              <Image Grid.Column="0" Source="{Binding Icon}" Style="{StaticResource imgMenuItemStyle}"/>
+                              <Label Grid.Column="1" Text="{Binding Title}" Style="{StaticResource lblMenuItemStyle}"
+                                            Margin="0,5,0,5"    />
+                        </Grid>
+                    </ViewCell.View>
+                </ViewCell>
+             </DataTemplate>
+          </ListView.ItemTemplate>
+       </ListView> 
+       <Grid Grid.Row="2" HorizontalOptions="FillAndExpand">
+           <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="*"/>
+           </Grid.ColumnDefinitions>
+           <StackLayout Orientation="Horizontal" Grid.Column="1" HorizontalOptions="FillAndExpand" Opacity="0" >
+             <Image Source="menu_drawer_setting_icon" Style="{StaticResource imgMenuItemStyle}" />
+             <Label Text="{x:Static local:AppResources.MSettings}" Style="{StaticResource lblMenuItemStyle}" />
+           </StackLayout>
+           <StackLayout Orientation="Horizontal" Grid.Column="0" HorizontalOptions="FillAndExpand" >
+             <Image  Source="menu_drawer_logout_icon" Style="{StaticResource imgMenuItemStyle}" />
+             <Label x:Name="lblLogIn_Out" Text="{x:Static local:AppResources.MLogout}" Style="{StaticResource lblMenuItemStyle}" />
+              <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer Tapped="OnLoginLogoutTap" />
+              </StackLayout.GestureRecognizers>
+           </StackLayout>
+        </Grid>
+     </Grid>
+    </Grid>
+    </ContentPage.Content>
+    </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+     <NavigationPage>
+        <x:Arguments>
+          <DetailPage:WalkToursListPage />
+        </x:Arguments>
+     </NavigationPage>
+    </MasterDetailPage.Detail>
+    </MasterDetailPage>

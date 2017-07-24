@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="VadodaraByFoot.View.WalkTourModule.RouteCoversPage"
+    xmlns:local="clr-namespace:VadodaraByFoot.AppResources"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:control="clr-namespace:VadodaraByFoot.CustomControls"
+    NavigationPage.BackButtonTitle= "" 
+    Title="{x:Static local:AppResources.TRouteCoversDetail}"
+    BackgroundColor="White">
+	<ContentPage.Resources>
+    <ResourceDictionary>
+        <Style x:Key="imgPlaceNumberRing" TargetType="Image">
+            <Setter Property="Aspect" Value="AspectFit" />
+          <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="WidthRequest" Value="40" />
+            <Setter Property="Source" Value="{Binding placeNumberRing}" />
+        </Style>
+        <Style x:Key="lblPlaceNumberRing" TargetType="Label">
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="WidthRequest" Value="40" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="Text" Value="{Binding placeNumberTitle}" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="{Binding NumberFontSize}" />
+            <Setter Property="FontFamily" Value="{DynamicResource FontDetailFamily}" />
+        </Style>
+        <Style x:Key="boxseparatorline" TargetType="BoxView">
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HeightRequest" Value="2" />
+            <Setter Property="WidthRequest" Value="{Binding SeparatorWidth}" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />    
+        </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content>
+       <!--  <StackLayout Spacing = "0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">-->
+          <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" RowSpacing="0">
+                <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+               </Grid.RowDefinitions>             
+        <control:HorizontalListview Grid.Row="0" Orientation="Horizontal" Padding="10,0,10,0"  x:Name="lstPlaceNumber"   BackgroundColor="#01ACE2">
+            <control:HorizontalListview.HeightRequest>
+                <OnPlatform x:TypeArguments="x:Double" iOS="65" Android="75" />
+             </control:HorizontalListview.HeightRequest>
+            <control:HorizontalListview.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                         <StackLayout Orientation="Horizontal" Spacing="{Binding SpacingBetweenNumber}"  VerticalOptions="FillAndExpand">
+
+                            <Grid VerticalOptions="FillAndExpand" HeightRequest="40" WidthRequest="40"  >
+                                <Label Style="{StaticResource lblPlaceNumberRing}" />
+                                <Image Style="{StaticResource imgPlaceNumberRing}" />    
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnPlceNumberTap" />
+                                </Grid.GestureRecognizers>
+                            </Grid>
+                            <BoxView Style="{StaticResource boxseparatorline}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </control:HorizontalListview.ItemTemplate>
+        </control:HorizontalListview>
+       
+        <ScrollView Grid.Row="1"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+    <StackLayout Spacing = "0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        
+        <Grid HorizontalOptions="FillAndExpand">
+            <Image  x:Name="imgHeaderPlaceholder" Source="route_place_holder" HorizontalOptions="FillAndExpand"  Aspect="Fill"/>
+            <Image  x:Name="imgHeader" HorizontalOptions="FillAndExpand"  Aspect="Fill"/>
+        </Grid>
+        <StackLayout Padding="10" Spacing="10">
+                    
+           <Label x:Name="lblTourName" Style="{StaticResource lblTexTitleStyle}"  LineBreakMode="TailTruncation"/>
+           <Grid x:Name="AudioPlayerGrid">        
+           <Grid x:Name="AudioPlayerMainPanel" >
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions> 
+
+              <Image  Grid.Column="0" x:Name="imgPausePlay" Source="play_icon.png" >
+                  <Image.GestureRecognizers>
+                      <TapGestureRecognizer Tapped="OnImgPausePlayTap" />
+                  </Image.GestureRecognizers>
+              </Image>
+                            
+              <Slider Grid.Column="1" HorizontalOptions="FillAndExpand" x:Name="sliderPositionAudio" ValueChanged="PlayerSlider_ValueChanged" />
+              <Label Grid.Column="2" x:Name="lblAudioDuration" Style="{StaticResource lblTextDetailStyle}" />
+              <Image Grid.Column="3" x:Name="imgMute"  Source="route_volume_icon" >
+                  <Image.GestureRecognizers>
+                      <TapGestureRecognizer Tapped="OnImgMuteTap" />
+                  </Image.GestureRecognizers>
+              </Image>
+         
+          </Grid>
+         <Grid x:Name="AudioPlayerBufferingPanel" BackgroundColor="White" Opacity="0.8"/>
+           <ActivityIndicator x:Name="BufferingAudio" VerticalOptions="Center" HorizontalOptions="Center" Style="{StaticResource ProgressOverlayStyle}" IsRunning="false">
+             <ActivityIndicator.Scale>
+                 <OnPlatform x:TypeArguments="x:Double" iOS="1" Android="0.5" />
+             </ActivityIndicator.Scale>
+             </ActivityIndicator>    
+         </Grid>    
+          <StackLayout x:Name="stckDownload" Orientation="Horizontal">
+             <Image x:Name="imgDownload" Grid.Column="0" Source="route_download_icon" />
+             <Label x:Name="lblDownload"  Text="{x:Static local:AppResources.LDownloadPodcast}" Style="{StaticResource lblTextDetailStyle}" TextColor="#060606"/>           
+             <Label x:Name="lblDownloadingSts" Text="{x:Static local:AppResources.LDownloading}" VerticalTextAlignment="Center" FontSize="Micro"  TextColor="#01ACE2" IsVisible="false"/>          
+             <ActivityIndicator x:Name="loadingDownloadAudio" VerticalOptions="Center" HorizontalOptions="Start" Style="{StaticResource ProgressOverlayStyle}" IsRunning="false">
+             <ActivityIndicator.Scale>
+                 <OnPlatform x:TypeArguments="x:Double" iOS="0.5" Android="0.25" />
+             </ActivityIndicator.Scale>
+             </ActivityIndicator>
+              <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer Tapped="OnImgDownloadTap" />
+              </StackLayout.GestureRecognizers>
+          </StackLayout>
+
+       </StackLayout>   
+       <control:Gradient_Stack HorizontalOptions="FillAndExpand" StartColor="#f8f8f8" EndColor="White" Padding="10">
+         <Label x:Name="lblTourDescription" Style="{StaticResource lblTextDetailStyle}"/>
+       </control:Gradient_Stack>
+       <StackLayout BackgroundColor="#EDECED" Padding="10">
+         <Label Text="Map Route" Style="{StaticResource lblTexTitleStyle}" FontAttributes="None"/>
+       </StackLayout>
+       <control:CustomMap x:Name="customMap" MapType="Street" WidthRequest="400" HeightRequest="400" />
+                
+     </StackLayout>
+    </ScrollView>
+            </Grid>
+<!--  </StackLayout>-->
+  </ContentPage.Content>
+</ContentPage>
